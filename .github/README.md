@@ -68,7 +68,8 @@ In this tutorial, you will learn how to build a basic Content Management System 
        return render_template('add.html')
 
    if __name__ == '__main__':
-       db.create_all()
+       with app.app_context():
+        db.create_all()
        app.run(debug=True)
    ```
 
