@@ -1,0 +1,13 @@
+{% extends "template.html" %} {% block title %}New Recipe{% endblock %} {% block
+content %}
+<h2>New Recipe</h2>
+<form method="post" action="/new">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required />
+  <label for="ingredients">Ingredients:</label>
+  <textarea id="ingredients" name="ingredients" required></textarea>
+  <label for="instructions">Instructions:</label>
+  <textarea id="instructions" name="instructions" required></textarea>
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}

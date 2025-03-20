@@ -1,0 +1,19 @@
+{% extends "template.html" %} {% block title %}Dashboard{% endblock %} {% block
+content %} {% if current_user.is_authenticated %}
+<h2>Welcome, {{ current_user.username }}!</h2>
+<p>
+  <a href="/new">Create a new recipe</a>
+</p>
+{% else %}
+<h2>Welcome, guest!</h2>
+<p><a href="/login">Login</a> or <a href="/register">Register</a></p>
+{% endif %} {% if recipes %}
+<h3>Recipes</h3>
+{% for recipe in recipes %}
+<div>
+  <h4>{{ recipe.name }}</h4>
+  <p>{{ recipe.ingredients }}</p>
+  <p>{{ recipe.instructions }}</p>
+</div>
+
+{% endfor %} {% endif %} {% endblock %}
